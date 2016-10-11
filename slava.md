@@ -11,19 +11,21 @@
 
 
 react project file structure
-~transclusion~
+LESS
+Material (there actually seem to be 3 competing popular libs, in order of github stars - Material-UI, react-toolbox, mui)
 unit testing
   - how to mock stuff without DI
 react redux tutorial
-how does the app "require" styles?
-hotloading tutorial vid
 react logging
-react-jsonschema-form looks good
+- [x] react-jsonschema-form looks good (needs conditional support though)
+
+graphQL
 
 #TODO
 
-- github
+- [x] github
 - JSX sublime text formatting + helpers for tags closing etc.
+- [x] nodemon
 
 ##Minimal useful version
 

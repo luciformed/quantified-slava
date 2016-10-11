@@ -9,10 +9,16 @@ let defaultSettings = require('./defaults');
 let BowerWebpackPlugin = require('bower-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
+  // entry: [
+  //   'webpack-dev-server/client?http://127.0.0.1:' + defaultSettings.port,
+  //   'webpack/hot/only-dev-server',
+  //   './src/index'
+  // ],
+  //
   entry: [
-    'webpack-dev-server/client?http://127.0.0.1:' + defaultSettings.port,
+    './src/index',
     'webpack/hot/only-dev-server',
-    './src/index'
+    'webpack-dev-server/client?http://localhost:8081'
   ],
   cache: true,
   devtool: 'eval-source-map',
@@ -31,8 +37,7 @@ config.module.loaders.push({
   test: /\.(js|jsx)$/,
   loader: 'react-hot!babel-loader',
   include: [].concat(
-    config.additionalPaths,
-    [ path.join(__dirname, '/../src') ]
+    config.additionalPaths, [path.join(__dirname, '/../src')]
   )
 });
 

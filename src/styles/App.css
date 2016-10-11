@@ -1,7 +1,14 @@
 /* Base Application Styles */
 body {
-  color: #333;
-  background: white;
+  background-color: #333;
+  color:white;
+  color: white;
+  padding-top: 50px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body legend, body .form-control {
+  color:white;
 }
 
 .index img {

@@ -1,17 +1,38 @@
-/*eslint no-console:0 */
-'use strict';
-require('core-js/fn/object/assign');
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.config');
-const open = require('open');
+"use strict";
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('./webpack.config');
+var path = require('path');
+var express = require('express');
+var proxy = require('proxy-middleware');
+var url = require('url');
 
-new WebpackDevServer(webpack(config), config.devServer)
-.listen(config.port, 'localhost', (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log('Listening at localhost:' + config.port);
-  console.log('Opening your system browser...');
-  open('http://localhost:' + config.port + '/webpack-dev-server/');
+var app = express();
+var apiApp = require("./api/index.js");
+
+var contentBase = path.resolve(__dirname, "src");
+
+
+app.use('/api', apiApp);
+app.use('/assets', proxy(url.parse('http://localhost:8081/assets')));
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.resolve(contentBase, "index.html"));
 });
+
+
+var server = new WebpackDevServer(webpack(config), {
+  contentBase: "./src/",
+  hot: true,
+  quiet: false,
+  noInfo: false,
+  publicPath: "/assets/",
+
+  stats: {
+    colors: true
+  }
+});
+
+// ## run the two servers
+server.listen(8081, "localhost", function() {});
+app.listen(8080);

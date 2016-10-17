@@ -9,7 +9,8 @@
 - `componentDidMount()` called after a component is rendered for the first time
 - spread attributes like `<Component {...props} />`
 
-
+React Storybook?
+time-travel debugging with redux?
 react project file structure
 LESS
 Material (there actually seem to be 3 competing popular libs, in order of github stars - Material-UI, react-toolbox, mui)
@@ -18,7 +19,7 @@ unit testing
 react redux tutorial
 react logging
 - [x] react-jsonschema-form looks good (needs conditional support though)
-
+how to do customise yeoman generators?
 graphQL
 
 #TODO
@@ -29,28 +30,29 @@ graphQL
 
 ##Minimal useful version
 
-- frontend for filling out form
-- form answers stored in db (mb some cloud json storage will do for now?)
-- hosted somehow
+- [x] frontend for filling out form
+- [x] form answers stored in db (mb some cloud json storage will do for now?)
+- node recurring tasks
 - daily email reminder
   - mailgun
+  - gmail action button
+- hosted somehow
+- basic auth
 
 
 ## Level 2
 
-- form builder
 - works on ios browser
 - weekly summary
-- auth (maybe get creative? auth with iphone somehow)
-- multitenancy + definitely hosted
-- own backend
-- email actions (gmail)
 
 ## Level 3
 - integrations with other apps
 - dashboard, charts
+- mobile app via react native??
 
 
 ## Level 4
+- multitenancy + definitely hosted
+- real auth (maybe get creative? auth with iphone somehow)
+- form builder
 - configurable dashboard & summary views
-- mobile app via react native??

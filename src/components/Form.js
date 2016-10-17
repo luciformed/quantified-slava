@@ -1,6 +1,6 @@
-require('core-js/fn/object/assign');
-
 import React from 'react';
+
+import { pick, keys } from 'ramda';
 
 import SchemaForm from 'react-jsonschema-form';
 
@@ -9,10 +9,9 @@ const schema = {
   type: "object",
   // required: ["title"],
   properties: {
-    mood: {type: "number", title: "Today's mood", minimum: 1, maximum: 10},
+    mood: {type: "number", title: "Mood", minimum: 1, maximum: 10},
     cigarettes : {type: "number", title: "How many cigarettes did you smoke?"},
     journal: {type:"string", "title": "Journal entry"}
-    // timestamp: {type: "number", title: "Timestamp", "readonly" : true}
   }
 };
 
@@ -36,14 +35,18 @@ const Form = React.createClass({
 
     console.log("onFormSubmit", form);
 
+
+    let payload = JSON.stringify(pick(keys(schema.properties), form.formData));
+
+
     let req = fetch(`/api/survey/${form.formData.id}`, {
       method: "PUT",
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-      body: JSON.stringify(Object.assign({}, form.formData, {timestamp:Date.now()}))
-    }).then((resp) => {console.log(resp.json())});
+      body: payload // pick schema keys and only submit them
+    });
 
   },
 

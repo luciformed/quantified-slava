@@ -23,6 +23,7 @@
   "keywords": [],
   "author": "Your name here",
   "devDependencies": {
+    "agendash": "^0.3.2",
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -47,6 +48,8 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.5",
     "karma-webpack": "^1.7.0",
+    "less": "^2.5.3",
+    "less-loader": "^2.0.0",
     "minimist": "^1.2.0",
     "mocha": "^2.2.5",
     "null-loader": "^0.1.1",
@@ -58,17 +61,18 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.0",
-    "webpack-dev-server": "^1.12.0",
-    "less-loader": "^2.0.0",
-    "less": "^2.5.3"
+    "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
+    "agenda": "^0.9.0",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "bootswatch": "^3.3.7",
     "classnames": "^2.2.5",
     "core-js": "^2.0.0",
     "express": "^4.14.0",
+    "moment": "^2.15.1",
+    "mongodb": "2.1.21",
     "normalize.css": "^4.0.0",
     "proxy-middleware": "^0.15.0",
     "ramda": "^0.22.1",

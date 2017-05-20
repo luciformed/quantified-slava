@@ -21,6 +21,7 @@ react logging
 - [x] react-jsonschema-form looks good (needs conditional support though)
 how to do customise yeoman generators?
 graphQL
+db backup?
 
 #TODO
 
@@ -56,3 +57,24 @@ graphQL
 - real auth (maybe get creative? auth with iphone somehow)
 - form builder
 - configurable dashboard & summary views
+
+
+
+
+
+
+
+
+
+## To start
+
+`rethinkdb --http-port=8888`
+
+source `.bashrc`
+`mongod --dbpath agenda_db`
+`node server.js`
+
+for agenda UI?
+`./node_modules/.bin/agendash/ --db=mongodb://localhost/agenda`
+
+localhost:8080
